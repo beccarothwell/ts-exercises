@@ -1,13 +1,7 @@
 export function findSmallNums(nums) {
   if (!nums) throw new Error("nums is required");
   // Your code here
-  let lessThanOne = [];
-  nums.forEach((num) => {
-    if (num < 1) {
-      lessThanOne.push(num);
-    }
-  });
-  return lessThanOne;
+  return nums.filter((num) => num < 1);
 }
 
 export function findNamesBeginningWith(names, char) {
