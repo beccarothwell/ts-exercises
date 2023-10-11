@@ -1,12 +1,12 @@
 export function getSquares(nums) {
   if (nums === undefined) throw new Error("nums is required");
   // Your code here!
+  return nums.map((num) => num * num);
 }
 
 export function camelCaseWords(words) {
   if (words === undefined) throw new Error("words is required");
   // Your code here!
-
   const capitalize = words.map((word, i) => {
     if (i === 0) return word;
     else if (i > 0) {
