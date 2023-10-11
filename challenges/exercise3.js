@@ -61,9 +61,9 @@ export function getSquareRoots(nums) {
   if (!nums) throw new Error("nums is required");
   // Your code here
   let squareRoots = [];
-  for (let i = 0; i < nums.length; i++) {
-    squareRoots.push(parseFloat(Math.sqrt(nums[i]).toFixed(2)));
-  }
+  nums.forEach((num) => {
+    squareRoots.push(parseFloat(Math.sqrt(num).toFixed(2)));
+  });
   return squareRoots;
 }
 
