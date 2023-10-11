@@ -15,11 +15,11 @@ export function findNamesBeginningWith(names, char) {
   if (!char) throw new Error("char is required");
   // Your code here
   let namesBeginningWith = [];
-  for (let i = 0; i < names.length; i++) {
-    if (names[i].charAt(0) === char) {
-      namesBeginningWith.push(names[i]);
+  names.forEach((name) => {
+    if (name.charAt(0) === char) {
+      namesBeginningWith.push(name);
     }
-  }
+  });
   return namesBeginningWith;
 }
 
