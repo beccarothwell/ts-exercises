@@ -20,13 +20,7 @@ export function findVerbs(words) {
 export function getIntegers(nums) {
   if (!nums) throw new Error("nums is required");
   // Your code here
-  let integers = [];
-  nums.forEach((num) => {
-    if (Number.isInteger(num)) {
-      integers.push(num);
-    }
-  });
-  return integers;
+  return nums.filter((num) => Number.isInteger(num));
 }
 
 export function getCities(users) {
