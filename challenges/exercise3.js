@@ -2,11 +2,11 @@ export function findSmallNums(nums) {
   if (!nums) throw new Error("nums is required");
   // Your code here
   let lessThanOne = [];
-  for (let i = 0; i < nums.length; i++) {
-    if (nums[i] < 1) {
-      lessThanOne.push(nums[i]);
+  nums.forEach((num) => {
+    if (num < 1) {
+      lessThanOne.push(num);
     }
-  }
+  });
   return lessThanOne;
 }
 
