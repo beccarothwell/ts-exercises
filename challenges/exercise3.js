@@ -32,11 +32,7 @@ export function getCities(users) {
 export function getSquareRoots(nums) {
   if (!nums) throw new Error("nums is required");
   // Your code here
-  let squareRoots = [];
-  nums.forEach((num) => {
-    squareRoots.push(parseFloat(Math.sqrt(num).toFixed(2)));
-  });
-  return squareRoots;
+  return nums.map((num) => parseFloat(Math.sqrt(num).toFixed(2)));
 }
 
 export function findSentencesContaining(sentences, str) {
