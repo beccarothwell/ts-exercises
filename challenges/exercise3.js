@@ -39,11 +39,11 @@ export function getIntegers(nums) {
   if (!nums) throw new Error("nums is required");
   // Your code here
   let integers = [];
-  for (let i = 0; i < nums.length; i++) {
-    if (Number.isInteger(nums[i])) {
-      integers.push(nums[i]);
+  nums.forEach((num) => {
+    if (Number.isInteger(num)) {
+      integers.push(num);
     }
-  }
+  });
   return integers;
 }
 
