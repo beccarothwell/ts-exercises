@@ -7,7 +7,6 @@ export function getFillings(sandwich) {
 export function isFromManchester(person) {
   if (person === undefined) throw new Error("person is required");
   // Your code here!
-
   if (person.city === "Manchester") return true;
 
   return false;
@@ -16,6 +15,9 @@ export function isFromManchester(person) {
 export function getBusNumbers(people) {
   if (people === undefined) throw new Error("people is required");
   // Your code here!
+  const numberOfBuses = people / 40;
+
+  return Math.ceil(numberOfBuses);
 }
 
 export function countSheep(arr) {
