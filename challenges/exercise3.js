@@ -84,8 +84,8 @@ export function getLongestSides(triangles) {
   if (!triangles) throw new Error("triangles is required");
   // Your code here
   let longestSides = [];
-  for (let i = 0; i < triangles.length; i++) {
-    longestSides.push(Math.max(...triangles[i]));
-  }
+  triangles.forEach((triangle) => {
+    longestSides.push(Math.max(...triangle));
+  });
   return longestSides;
 }
