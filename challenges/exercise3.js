@@ -72,11 +72,11 @@ export function findSentencesContaining(sentences, str) {
   if (!str) throw new Error("str is required");
   // Your code here
   let relevantSentences = [];
-  for (let i = 0; i < sentences.length; i++) {
-    if (sentences[i].toLowerCase().includes(str.toLowerCase())) {
-      relevantSentences.push(sentences[i]);
+  sentences.forEach((sentence) => {
+    if (sentence.toLowerCase().includes(str.toLowerCase())) {
+      relevantSentences.push(sentence);
     }
-  }
+  });
   return relevantSentences;
 }
 
