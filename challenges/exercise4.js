@@ -42,13 +42,13 @@ export const findNeedle = (haystack, searchTerm) => {
   if (haystack === undefined) throw new Error("haystack is required");
   if (searchTerm === undefined) throw new Error("searchTerm is required");
   // Your code here!
-  return Object.values(haystack).filter(
-    (straw) =>
-      typeof straw === "string" &&
-      straw.toLowerCase().includes(searchTerm.toLowerCase())
-  ).length > 0
-    ? true
-    : false;
+  return (
+    Object.values(haystack).filter(
+      (straw) =>
+        typeof straw === "string" &&
+        straw.toLowerCase().includes(searchTerm.toLowerCase())
+    ).length > 0
+  );
 };
 
 export const getWordFrequencies = (str) => {
