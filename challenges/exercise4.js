@@ -13,8 +13,8 @@ export const count1sand0s = (str) => {
   // Your code here!
   const splitStr = str.split("");
   return {
-    1: splitStr.filter((item) => item == 1).length,
-    0: splitStr.filter((item) => item == 0).length,
+    1: splitStr.filter((item) => item === "1").length,
+    0: splitStr.filter((item) => item === "0").length,
   };
 };
 
