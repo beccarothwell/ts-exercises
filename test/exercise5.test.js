@@ -31,6 +31,10 @@ describe("sumMultiples", () => {
   test("returns 0 when passed an empty array", () => {
     expect(sumMultiples([])).toBe(0);
   });
+
+  test("returns 0 if there are no multiples of 3 or 5", () => {
+    expect(sumMultiples([1, 7, 22, 31])).toBe(0);
+  });
 });
 
 describe("isValidDNA", () => {});
