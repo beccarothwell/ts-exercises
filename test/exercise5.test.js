@@ -27,6 +27,10 @@ describe("sumMultiples", () => {
   test("does not count fractional numbers expressed with decimal notation", () => {
     expect(sumMultiples([1, 5.5, 3.33, 10, 5.0])).toBe(15);
   });
+
+  test("returns 0 when passed an empty array", () => {
+    expect(sumMultiples([])).toBe(0);
+  });
 });
 
 describe("isValidDNA", () => {});
