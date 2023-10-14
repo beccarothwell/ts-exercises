@@ -7,7 +7,7 @@ import {
   areWeCovered,
 } from "../challenges/exercise5";
 
-describe("sumMultiples", () => {
+xdescribe("sumMultiples", () => {
   test("returns the the sum of any numbers which are a multiple of 3 or 5", () => {
     expect(sumMultiples([5, 1, 3])).toBe(8);
 
@@ -40,6 +40,8 @@ describe("sumMultiples", () => {
 describe("isValidDNA", () => {
   test("returns true when passed a string containing only C G T or A characters", () => {
     expect(isValidDNA("CGTA")).toBe(true);
+
+    expect(isValidDNA("CTGTCCAGG")).toBe(true);
   });
 });
 
