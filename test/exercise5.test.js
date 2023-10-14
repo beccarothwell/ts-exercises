@@ -15,6 +15,10 @@ describe("sumMultiples", () => {
 
     expect(sumMultiples([1, 5, 5, 5, 3, 3, 2])).toBe(21);
   });
+
+  test("does not add strings of numbers which are a multiple of 3 or 5", () => {
+    expect(sumMultiples([1, 5, 3, "50", "33", "22"])).toBe(8);
+  });
 });
 
 describe("isValidDNA", () => {});
