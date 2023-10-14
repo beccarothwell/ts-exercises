@@ -37,7 +37,11 @@ describe("sumMultiples", () => {
   });
 });
 
-describe("isValidDNA", () => {});
+describe("isValidDNA", () => {
+  test("returns true when passed a string containing only C G T or A characters", () => {
+    expect(isValidDNA("CGTA")).toBe(true);
+  });
+});
 
 describe("getComplementaryDNA", () => {});
 
