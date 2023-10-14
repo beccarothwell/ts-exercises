@@ -13,7 +13,10 @@
 export const sumMultiples = (arr) => {
   if (arr === undefined) throw new Error("arr is required");
   return arr.reduce((acc, currVal) => {
-    if (currVal % 3 === 0 || currVal % 5 === 0) {
+    if (
+      typeof currVal === "number" &&
+      (currVal % 3 === 0 || currVal % 5 === 0)
+    ) {
       return acc + currVal;
     }
     return acc;
