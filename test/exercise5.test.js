@@ -98,6 +98,14 @@ describe("isItPrime", () => {
 
     expect(isItPrime(11)).toBe(true);
   });
+
+  test("works with big prime numbers", () => {
+    expect(isItPrime(7919)).toBe(true);
+
+    expect(isItPrime(27644437)).toBe(true);
+
+    expect(isItPrime(2971215073)).toBe(true);
+  });
 });
 
 describe("createMatrix", () => {});
