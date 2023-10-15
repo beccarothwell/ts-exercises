@@ -150,7 +150,7 @@ xdescribe("isItPrime", () => {
   });
 });
 
-describe("createMatrix", () => {
+xdescribe("createMatrix", () => {
   test("returns an array of n arrays, each filled with n items", () => {
     expect(createMatrix(3, "foo")).toEqual([
       ["foo", "foo", "foo"],
@@ -262,4 +262,13 @@ describe("createMatrix", () => {
   });
 });
 
-describe("areWeCovered", () => {});
+describe("areWeCovered", () => {
+  test("returns true if there are enough staff scheduled for the given day", () => {
+    const arr1 = [
+      { name: "Sally", rota: ["Monday", "Tuesday", "Friday"] },
+      { name: "Pedro", rota: ["Saturday", "Sunday", "Tuesday", "Wednesday"] },
+      { name: "Jessica", rota: ["Friday", "Monday", "Tuesday"] },
+    ];
+    expect(areWeCovered(arr1, "Tuesday")).toBe(true);
+  });
+});
