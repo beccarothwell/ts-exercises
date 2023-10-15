@@ -263,12 +263,53 @@ xdescribe("createMatrix", () => {
 });
 
 describe("areWeCovered", () => {
-  test("returns true if there are enough staff scheduled for the given day", () => {
+  test("returns true if there 3 or more staff scheduled for the given day", () => {
     const arr1 = [
       { name: "Sally", rota: ["Monday", "Tuesday", "Friday"] },
       { name: "Pedro", rota: ["Saturday", "Sunday", "Tuesday", "Wednesday"] },
       { name: "Jessica", rota: ["Friday", "Monday", "Tuesday"] },
     ];
     expect(areWeCovered(arr1, "Tuesday")).toBe(true);
+
+    const arr2 = [
+      { name: "Sally", rota: ["Monday", "Tuesday", "Friday"] },
+      {
+        name: "Pedro",
+        rota: ["Saturday", "Sunday", "Monday", "Tuesday", "Wednesday"],
+      },
+      { name: "Jessica", rota: ["Friday", "Monday", "Tuesday"] },
+    ];
+    expect(areWeCovered(arr2, "Monday")).toBe(true);
+
+    const arr3 = [
+      { name: "Sally", rota: ["Monday", "Tuesday", "Friday"] },
+      {
+        name: "Pedro",
+        rota: ["Saturday", "Sunday", "Monday", "Tuesday", "Wednesday"],
+      },
+      { name: "Jessica", rota: ["Friday", "Monday", "Tuesday"] },
+      { name: "Geoffrey", rota: ["Monday", "Tuesday", "Wednesday"] },
+    ];
+    expect(areWeCovered(arr3, "Monday")).toBe(true);
+  });
+
+  test("returns false if there are less than 3 staff scheduled for the given day", () => {
+    const arr1 = [
+      { name: "Sally", rota: ["Monday", "Tuesday", "Friday"] },
+      { name: "Pedro", rota: ["Saturday", "Sunday", "Wednesday"] },
+      { name: "Jessica", rota: ["Friday", "Monday", "Tuesday"] },
+    ];
+    expect(areWeCovered(arr1, "Tuesday")).toBe(false);
+
+    const arr2 = [
+      { name: "Sally", rota: ["Monday", "Tuesday", "Friday"] },
+      {
+        name: "Pedro",
+        rota: ["Saturday", "Sunday", "Monday", "Tuesday", "Wednesday"],
+      },
+      { name: "Jessica", rota: ["Friday", "Monday", "Tuesday"] },
+      { name: "Geoffrey", rota: ["Monday", "Tuesday", "Wednesday"] },
+    ];
+    expect(areWeCovered(arr2, "Friday")).toBe(false);
   });
 });
