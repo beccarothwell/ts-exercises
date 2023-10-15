@@ -93,6 +93,10 @@ xdescribe("getComplementaryDNA", () => {
 describe("isItPrime", () => {
   test("returns true if passed a prime number", () => {
     expect(isItPrime(2)).toBe(true);
+
+    expect(isItPrime(5)).toBe(true);
+
+    expect(isItPrime(11)).toBe(true);
   });
 });
 
