@@ -311,6 +311,17 @@ describe("areWeCovered", () => {
       { name: "Geoffrey", rota: ["Monday", "Tuesday", "Wednesday"] },
     ];
     expect(areWeCovered(arr2, "Friday")).toBe(false);
+
+    const arr3 = [
+      { name: "Sally", rota: ["Monday", "Tuesday"] },
+      {
+        name: "Pedro",
+        rota: ["Saturday", "Monday", "Wednesday"],
+      },
+      { name: "Jessica", rota: ["Sunday", "Monday", "Tuesday"] },
+      { name: "Geoffrey", rota: ["Monday", "Tuesday", "Wednesday"] },
+    ];
+    expect(areWeCovered(arr3, "Thursday")).toBe(false);
   });
 
   test("return false if there are no staff at all", () => {
@@ -321,5 +332,14 @@ describe("areWeCovered", () => {
     expect(areWeCovered([], "Thursday")).toBe(false);
     expect(areWeCovered([], "Friday")).toBe(false);
     expect(areWeCovered([], "Saturday")).toBe(false);
+  });
+
+  test("return false if there are less than three staff", () => {
+    const arr1 = [
+      { name: "Jessica", rota: ["Sunday", "Monday", "Tuesday"] },
+      { name: "Geoffrey", rota: ["Monday", "Tuesday", "Wednesday"] },
+    ];
+
+    expect(areWeCovered(arr1, "Thursday")).toBe(false);
   });
 });
