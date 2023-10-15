@@ -52,6 +52,8 @@ describe("isValidDNA", () => {
     //space is a character other than C G T or A
     expect(isValidDNA("CTGT CCAGG")).toBe(false);
 
+    expect(isValidDNA(" ")).toBe(false);
+
     expect(isValidDNA("CTGT!CCA?GG#")).toBe(false);
   });
 
@@ -66,7 +68,11 @@ describe("isValidDNA", () => {
   });
 });
 
-describe("getComplementaryDNA", () => {});
+describe("getComplementaryDNA", () => {
+  test("returns a string of complementary base pairs when passed a valid DNA string", () => {
+    expect(isValidDNA("ACTG")).toMatch("TGAC");
+  });
+});
 
 describe("isItPrime", () => {});
 
