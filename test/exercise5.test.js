@@ -7,7 +7,7 @@ import {
   areWeCovered,
 } from "../challenges/exercise5";
 
-xdescribe("sumMultiples", () => {
+describe("sumMultiples", () => {
   test("returns the the sum of any numbers which are a multiple of 3 or 5", () => {
     expect(sumMultiples([5, 1, 3])).toBe(8);
 
@@ -37,7 +37,7 @@ xdescribe("sumMultiples", () => {
   });
 });
 
-xdescribe("isValidDNA", () => {
+describe("isValidDNA", () => {
   test("returns true when passed a string containing only C G T or A characters", () => {
     expect(isValidDNA("CGTA")).toBe(true);
 
@@ -68,7 +68,7 @@ xdescribe("isValidDNA", () => {
   });
 });
 
-xdescribe("getComplementaryDNA", () => {
+describe("getComplementaryDNA", () => {
   test("returns a string of complementary base pairs when passed a valid DNA string", () => {
     expect(getComplementaryDNA("ACTG")).toBe("TGAC");
 
@@ -90,7 +90,7 @@ xdescribe("getComplementaryDNA", () => {
   });
 });
 
-xdescribe("isItPrime", () => {
+describe("isItPrime", () => {
   test("returns true if passed a prime number", () => {
     expect(isItPrime(2)).toBe(true);
 
@@ -150,7 +150,7 @@ xdescribe("isItPrime", () => {
   });
 });
 
-xdescribe("createMatrix", () => {
+describe("createMatrix", () => {
   test("returns an array of n arrays, each filled with n items", () => {
     expect(createMatrix(3, "foo")).toEqual([
       ["foo", "foo", "foo"],
