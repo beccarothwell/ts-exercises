@@ -166,7 +166,7 @@ describe("createMatrix", () => {
       ["bar", "bar", "bar", "bar", "bar"],
     ]);
   });
-  test("works with longer strings", () => {
+  test("works with longer string as fill item", () => {
     expect(
       createMatrix(2, "The quick brown fox jumps over the lazy dog")
     ).toEqual([
@@ -177,6 +177,33 @@ describe("createMatrix", () => {
       [
         "The quick brown fox jumps over the lazy dog",
         "The quick brown fox jumps over the lazy dog",
+      ],
+    ]);
+  });
+  test("works with array as fill item", () => {
+    expect(createMatrix(2, ["foo", "bar"])).toEqual([
+      [
+        ["foo", "bar"],
+        ["foo", "bar"],
+      ],
+      [
+        ["foo", "bar"],
+        ["foo", "bar"],
+      ],
+    ]);
+
+    expect(
+      createMatrix(2, [
+        ["how", ["deep", ["does", ["the", ["rabbit", ["hole", ["go?"]]]]]]],
+      ])
+    ).toEqual([
+      [
+        [["how", ["deep", ["does", ["the", ["rabbit", ["hole", ["go?"]]]]]]]],
+        [["how", ["deep", ["does", ["the", ["rabbit", ["hole", ["go?"]]]]]]]],
+      ],
+      [
+        [["how", ["deep", ["does", ["the", ["rabbit", ["hole", ["go?"]]]]]]]],
+        [["how", ["deep", ["does", ["the", ["rabbit", ["hole", ["go?"]]]]]]]],
       ],
     ]);
   });
