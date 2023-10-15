@@ -114,6 +114,10 @@ describe("isItPrime", () => {
 
     expect(isItPrime(2971215073)).toBe(true);
   });
+
+  test("returns false if passed a fractional number expressed with decimal notation", () => {
+    expect(isItPrime(5.7)).toBe(false);
+  });
 });
 
 describe("createMatrix", () => {});
