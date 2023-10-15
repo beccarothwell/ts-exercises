@@ -105,6 +105,12 @@ describe("isItPrime", () => {
     expect(isItPrime(12)).toBe(false);
 
     expect(isItPrime(68)).toBe(false);
+
+    expect(isItPrime(-5)).toBe(false);
+
+    expect(isItPrime(1)).toBe(false);
+
+    expect(isItPrime(0)).toBe(false);
   });
 
   test("works with big prime numbers", () => {
