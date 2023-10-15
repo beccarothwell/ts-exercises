@@ -48,6 +48,11 @@ describe("isValidDNA", () => {
     expect(isValidDNA("CGTARHD")).toBe(false);
 
     expect(isValidDNA("JKLPN")).toBe(false);
+
+    //space is a character other than C G T or A
+    expect(isValidDNA("CTGT CCAGG")).toBe(false);
+
+    expect(isValidDNA("CTGT!CCA?GG#")).toBe(false);
   });
 });
 
