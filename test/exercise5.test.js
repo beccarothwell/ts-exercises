@@ -342,4 +342,31 @@ describe("areWeCovered", () => {
 
     expect(areWeCovered(arr1, "Thursday")).toBe(false);
   });
+
+  test("works if any of the rota arrays are empty", () => {
+    const arr1 = [
+      { name: "Sally", rota: ["Monday", "Tuesday", "Friday"] },
+      {
+        name: "Pedro",
+        rota: ["Saturday", "Sunday", "Monday", "Tuesday", "Wednesday"],
+      },
+      { name: "Jessica", rota: [] },
+      { name: "Geoffrey", rota: ["Monday", "Tuesday", "Wednesday"] },
+    ];
+
+    expect(areWeCovered(arr1, "Monday")).toBe(true);
+  });
+
+  test("is case insensitive", () => {
+    const arr1 = [
+      { name: "Sally", rota: ["monday", "Tuesday", "Friday"] },
+      {
+        name: "Pedro",
+        rota: ["Saturday", "Sunday", "Monday", "Tuesday", "Wednesday"],
+      },
+      { name: "Geoffrey", rota: ["Monday", "Tuesday", "Wednesday"] },
+    ];
+
+    expect(areWeCovered(arr1, "Monday")).toBe(true);
+  });
 });
