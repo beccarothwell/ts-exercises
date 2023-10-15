@@ -126,6 +126,12 @@ describe("isItPrime", () => {
   test("returns true if passed a whole prime number expressed with decimal notation", () => {
     expect(isItPrime(5.0)).toBe(true);
   });
+
+  test("throw an error if passed a number as a string", () => {
+    expect(() => {
+      isItPrime("5");
+    }).toThrow("n must be a number");
+  });
 });
 
 describe("createMatrix", () => {});
