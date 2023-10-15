@@ -54,6 +54,12 @@ describe("isValidDNA", () => {
 
     expect(isValidDNA("CTGT!CCA?GG#")).toBe(false);
   });
+
+  test("is case sensitive", () => {
+    expect(isValidDNA("ctag")).toBe(false);
+
+    expect(isValidDNA("CtGA")).toBe(false);
+  });
 });
 
 describe("getComplementaryDNA", () => {});
