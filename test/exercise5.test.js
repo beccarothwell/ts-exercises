@@ -117,6 +117,14 @@ describe("isItPrime", () => {
 
   test("returns false if passed a fractional number expressed with decimal notation", () => {
     expect(isItPrime(5.7)).toBe(false);
+
+    expect(isItPrime(5.01)).toBe(false);
+
+    expect(isItPrime(5.000001)).toBe(false);
+  });
+
+  test("returns true if passed a whole prime number expressed with decimal notation", () => {
+    expect(isItPrime(5.0)).toBe(true);
   });
 });
 
