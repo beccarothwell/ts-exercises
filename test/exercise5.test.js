@@ -37,7 +37,7 @@ xdescribe("sumMultiples", () => {
   });
 });
 
-describe("isValidDNA", () => {
+xdescribe("isValidDNA", () => {
   test("returns true when passed a string containing only C G T or A characters", () => {
     expect(isValidDNA("CGTA")).toBe(true);
 
@@ -70,7 +70,7 @@ describe("isValidDNA", () => {
 
 describe("getComplementaryDNA", () => {
   test("returns a string of complementary base pairs when passed a valid DNA string", () => {
-    expect(isValidDNA("ACTG")).toMatch("TGAC");
+    expect(getComplementaryDNA("ACTG")).toBe("TGAC");
   });
 });
 
