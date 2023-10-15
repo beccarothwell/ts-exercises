@@ -43,6 +43,12 @@ describe("isValidDNA", () => {
 
     expect(isValidDNA("CTGTCCAGG")).toBe(true);
   });
+
+  test("returns false when passed a string containing characters other than C G T or A", () => {
+    expect(isValidDNA("CGTARHD")).toBe(false);
+
+    expect(isValidDNA("JKLPN")).toBe(false);
+  });
 });
 
 describe("getComplementaryDNA", () => {});
