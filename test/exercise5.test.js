@@ -71,6 +71,12 @@ xdescribe("isValidDNA", () => {
 describe("getComplementaryDNA", () => {
   test("returns a string of complementary base pairs when passed a valid DNA string", () => {
     expect(getComplementaryDNA("ACTG")).toBe("TGAC");
+
+    expect(getComplementaryDNA("ACTGCCGTTTACTTAG")).toBe("TGACGGCAAATGAATC");
+  });
+
+  test("returns null if passed an invalid DNA string", () => {
+    expect(getComplementaryDNA("ACTGJ")).toBe(null);
   });
 });
 
