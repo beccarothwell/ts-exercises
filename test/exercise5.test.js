@@ -166,7 +166,7 @@ describe("createMatrix", () => {
       ["bar", "bar", "bar", "bar", "bar"],
     ]);
   });
-  test("works with longer string as fill item", () => {
+  test("works with a longer string as fill item", () => {
     expect(
       createMatrix(2, "The quick brown fox jumps over the lazy dog")
     ).toEqual([
@@ -180,7 +180,7 @@ describe("createMatrix", () => {
       ],
     ]);
   });
-  test("works with array as fill item", () => {
+  test("works with an array as fill item", () => {
     expect(createMatrix(2, ["foo", "bar"])).toEqual([
       [
         ["foo", "bar"],
@@ -204,6 +204,59 @@ describe("createMatrix", () => {
       [
         [["how", ["deep", ["does", ["the", ["rabbit", ["hole", ["go?"]]]]]]]],
         [["how", ["deep", ["does", ["the", ["rabbit", ["hole", ["go?"]]]]]]]],
+      ],
+    ]);
+  });
+
+  test("works with an object as fill item", () => {
+    expect(createMatrix(6, { a: "foo", b: "bar" })).toEqual([
+      [
+        { a: "foo", b: "bar" },
+        { a: "foo", b: "bar" },
+        { a: "foo", b: "bar" },
+        { a: "foo", b: "bar" },
+        { a: "foo", b: "bar" },
+        { a: "foo", b: "bar" },
+      ],
+      [
+        { a: "foo", b: "bar" },
+        { a: "foo", b: "bar" },
+        { a: "foo", b: "bar" },
+        { a: "foo", b: "bar" },
+        { a: "foo", b: "bar" },
+        { a: "foo", b: "bar" },
+      ],
+      [
+        { a: "foo", b: "bar" },
+        { a: "foo", b: "bar" },
+        { a: "foo", b: "bar" },
+        { a: "foo", b: "bar" },
+        { a: "foo", b: "bar" },
+        { a: "foo", b: "bar" },
+      ],
+      [
+        { a: "foo", b: "bar" },
+        { a: "foo", b: "bar" },
+        { a: "foo", b: "bar" },
+        { a: "foo", b: "bar" },
+        { a: "foo", b: "bar" },
+        { a: "foo", b: "bar" },
+      ],
+      [
+        { a: "foo", b: "bar" },
+        { a: "foo", b: "bar" },
+        { a: "foo", b: "bar" },
+        { a: "foo", b: "bar" },
+        { a: "foo", b: "bar" },
+        { a: "foo", b: "bar" },
+      ],
+      [
+        { a: "foo", b: "bar" },
+        { a: "foo", b: "bar" },
+        { a: "foo", b: "bar" },
+        { a: "foo", b: "bar" },
+        { a: "foo", b: "bar" },
+        { a: "foo", b: "bar" },
       ],
     ]);
   });
