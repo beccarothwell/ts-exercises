@@ -380,4 +380,18 @@ describe("areWeCovered", () => {
 
     expect(areWeCovered(arr2, "tuesdaY")).toBe(true);
   });
+
+  test("throw an error if passed a number as a string", () => {
+    const arr1 = [
+      { name: "Sally", rota: ["Monday", "Tuesday", "Friday"] },
+      {
+        name: "Pedro",
+        rota: ["Saturday", "Sunday", "Monday", "Tuesday", "Wednesday"],
+      },
+      { name: "Geoffrey", rota: ["Monday", "Tuesday", "Wednesday"] },
+    ];
+    expect(() => {
+      isItPrime(areWeCovered(arr1, "foo"));
+    }).toThrow("day must be a day of the week");
+  });
 });
