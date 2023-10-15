@@ -119,7 +119,7 @@ export const areWeCovered = (staff, day) => {
   if (day === undefined) throw new Error("day is required");
 
   const staffAvailable = staff.reduce((countStaff, person) => {
-    if (person.rota.includes(day)) {
+    if (person.rota.some((item) => item.toLowerCase() === day.toLowerCase())) {
       countStaff++;
     }
     return countStaff;
