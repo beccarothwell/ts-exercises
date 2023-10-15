@@ -368,5 +368,16 @@ describe("areWeCovered", () => {
     ];
 
     expect(areWeCovered(arr1, "Monday")).toBe(true);
+
+    const arr2 = [
+      { name: "Sally", rota: ["monday", "Tuesday", "Friday"] },
+      {
+        name: "Pedro",
+        rota: ["Saturday", "Sunday", "Monday", "Tuesday", "Wednesday"],
+      },
+      { name: "Geoffrey", rota: ["Monday", "tuesday", "Wednesday"] },
+    ];
+
+    expect(areWeCovered(arr2, "tuesdaY")).toBe(true);
   });
 });
