@@ -157,6 +157,28 @@ describe("createMatrix", () => {
       ["foo", "foo", "foo"],
       ["foo", "foo", "foo"],
     ]);
+
+    expect(createMatrix(5, "bar")).toEqual([
+      ["bar", "bar", "bar", "bar", "bar"],
+      ["bar", "bar", "bar", "bar", "bar"],
+      ["bar", "bar", "bar", "bar", "bar"],
+      ["bar", "bar", "bar", "bar", "bar"],
+      ["bar", "bar", "bar", "bar", "bar"],
+    ]);
+  });
+  test("works with longer strings", () => {
+    expect(
+      createMatrix(2, "The quick brown fox jumps over the lazy dog")
+    ).toEqual([
+      [
+        "The quick brown fox jumps over the lazy dog",
+        "The quick brown fox jumps over the lazy dog",
+      ],
+      [
+        "The quick brown fox jumps over the lazy dog",
+        "The quick brown fox jumps over the lazy dog",
+      ],
+    ]);
   });
 });
 
