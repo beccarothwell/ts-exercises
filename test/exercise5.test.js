@@ -60,6 +60,10 @@ describe("isValidDNA", () => {
 
     expect(isValidDNA("CtGA")).toBe(false);
   });
+
+  test("returns false if passed an empty string", () => {
+    expect(isValidDNA("")).toBe(false);
+  });
 });
 
 describe("getComplementaryDNA", () => {});
