@@ -118,6 +118,20 @@ export const areWeCovered = (staff, day) => {
   if (staff === undefined) throw new Error("staff is required");
   if (day === undefined) throw new Error("day is required");
 
+  const DAYS_OF_THE_WEEK = [
+    "Sunday",
+    "Monday",
+    "Tuesday",
+    "Wednesday",
+    "Thursday",
+    "Friday",
+    "Saturday",
+  ];
+  if (
+    !DAYS_OF_THE_WEEK.some((item) => item.toLowerCase() === day.toLowerCase())
+  )
+    throw new Error("day must be a day of the week");
+
   const staffAvailable = staff.reduce((countStaff, person) => {
     if (person.rota.some((item) => item.toLowerCase() === day.toLowerCase())) {
       countStaff++;
