@@ -99,6 +99,14 @@ describe("isItPrime", () => {
     expect(isItPrime(11)).toBe(true);
   });
 
+  test("returns false if passed a non-prime number", () => {
+    expect(isItPrime(6)).toBe(false);
+
+    expect(isItPrime(12)).toBe(false);
+
+    expect(isItPrime(68)).toBe(false);
+  });
+
   test("works with big prime numbers", () => {
     expect(isItPrime(7919)).toBe(true);
 
