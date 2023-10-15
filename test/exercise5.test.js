@@ -132,6 +132,16 @@ describe("isItPrime", () => {
       isItPrime("5");
     }).toThrow("n must be a number");
   });
+
+  test("throw an error if passed anything other than a string", () => {
+    expect(() => {
+      isItPrime([5]);
+    }).toThrow("n must be a number");
+
+    expect(() => {
+      isItPrime({ i: 5 });
+    }).toThrow("n must be a number");
+  });
 });
 
 describe("createMatrix", () => {});
