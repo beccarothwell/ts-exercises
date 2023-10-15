@@ -68,7 +68,7 @@ xdescribe("isValidDNA", () => {
   });
 });
 
-describe("getComplementaryDNA", () => {
+xdescribe("getComplementaryDNA", () => {
   test("returns a string of complementary base pairs when passed a valid DNA string", () => {
     expect(getComplementaryDNA("ACTG")).toBe("TGAC");
 
@@ -77,10 +77,24 @@ describe("getComplementaryDNA", () => {
 
   test("returns null if passed an invalid DNA string", () => {
     expect(getComplementaryDNA("ACTGJ")).toBe(null);
+
+    expect(getComplementaryDNA("CTGT CCAGG")).toBe(null);
+
+    expect(getComplementaryDNA("CTGT!CCA?GG#")).toBe(null);
+
+    expect(getComplementaryDNA(" ")).toBe(null);
+
+    expect(getComplementaryDNA("")).toBe(null);
+
+    expect(getComplementaryDNA("ctag")).toBe(null);
   });
 });
 
-describe("isItPrime", () => {});
+describe("isItPrime", () => {
+  test("returns true if passed a prime number", () => {
+    expect(isItPrime(1)).toBe(true);
+  });
+});
 
 describe("createMatrix", () => {});
 
