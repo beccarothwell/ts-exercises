@@ -73,12 +73,13 @@ export const isItPrime = (n) => {
   if (n < 2) return false;
   if (n === 2) return true;
 
-  let isPrime;
   for (let i = 2; i <= Math.sqrt(n); i++) {
-    if (n % i === 0) isPrime = false;
-    isPrime = true;
+    if (n % i === 0) {
+      return false;
+    }
+
+    return true;
   }
-  return isPrime;
 };
 
 /**
