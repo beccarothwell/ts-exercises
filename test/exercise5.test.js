@@ -312,4 +312,14 @@ describe("areWeCovered", () => {
     ];
     expect(areWeCovered(arr2, "Friday")).toBe(false);
   });
+
+  test("return false if there are no staff at all", () => {
+    expect(areWeCovered([], "Sunday")).toBe(false);
+    expect(areWeCovered([], "Monday")).toBe(false);
+    expect(areWeCovered([], "Tuesday")).toBe(false);
+    expect(areWeCovered([], "Wednesday")).toBe(false);
+    expect(areWeCovered([], "Thursday")).toBe(false);
+    expect(areWeCovered([], "Friday")).toBe(false);
+    expect(areWeCovered([], "Saturday")).toBe(false);
+  });
 });
