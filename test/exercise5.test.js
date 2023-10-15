@@ -90,7 +90,7 @@ xdescribe("getComplementaryDNA", () => {
   });
 });
 
-describe("isItPrime", () => {
+xdescribe("isItPrime", () => {
   test("returns true if passed a prime number", () => {
     expect(isItPrime(2)).toBe(true);
 
@@ -150,6 +150,14 @@ describe("isItPrime", () => {
   });
 });
 
-describe("createMatrix", () => {});
+describe("createMatrix", () => {
+  test("returns an array of n arrays, each filled with n items", () => {
+    expect(createMatrix(3, "foo")).toEqual([
+      ["foo", "foo", "foo"],
+      ["foo", "foo", "foo"],
+      ["foo", "foo", "foo"],
+    ]);
+  });
+});
 
 describe("areWeCovered", () => {});
