@@ -1,4 +1,10 @@
-export function getFillings(sandwich) {
+type Sandwich = {
+  bread: string;
+  fillings: string[];
+  accompaniment: string;
+};
+
+export function getFillings(sandwich: Sandwich) {
   if (sandwich === undefined) throw new Error("ingredients is required");
   // Your code here!
   return sandwich.fillings;
